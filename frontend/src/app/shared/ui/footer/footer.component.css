@@ -1,0 +1,5 @@
+/* Puedes personalizar estilos específicos del footer aquí */
+
+footer a {
+  transition: color 0.3s ease;
+}

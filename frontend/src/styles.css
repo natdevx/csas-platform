@@ -7,15 +7,29 @@
 @tailwind components;
 @tailwind utilities;
 
-/* COLOR DE FONDO GLOBAL */
-.bg-csas {
-  background: linear-gradient(120deg, #f8f8e1 0%, #8accd5 50%, #013a42 100%);
-}
-
-/* Tipografías GLOBAL */
+/* Colores & Tipografías GLOBALES */
 :root {
+  --csas-dominant: #f8f8e1;   /* Beige */
+  --csas-secondary: #8accd5; /* Non photo blue */
+  --csas-accent: #013a42;    /* Midnight green */
   --font-title: 'Montserrat', sans-serif;
   --font-body: 'Fira Sans', sans-serif;
+}
+
+/* COLOR DE FONDO GLOBAL */
+
+/* .bg-csas {
+  background: linear-gradient(120deg, #f8f8e1 0%, #8accd5 50%, #013a42 100%);
+}
+*/
+.bg-csas-radial {
+  position: relative; /* Necesario para que ::before se posicione bien */
+  background: radial-gradient(
+    125% 125% at 50% 90%,
+    var(--csas-dominant) 40%,
+    var(--csas-secondary) 70%,
+    var(--csas-accent) 100%
+  );
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -23,4 +37,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 body, p, span, input, button {
   font-family: var(--font-body);
+}
+
+/* Para que el fondo ocupe todo lo ancho y largo */
+html, body {
+  height: 100%;
+  margin: 0;
 }
