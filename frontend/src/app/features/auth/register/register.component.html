@@ -1,1 +1,147 @@
-<p>register works!</p>
+<div class="min-h-screen flex items-center justify-center  py-10">
+  <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-5xl flex flex-col md:flex-row items-center gap-8">
+    
+    <!-- Columna izquierda: Logo + Ilustración -->
+    <div class="flex-1 flex flex-col items-center justify-center text-center space-y-6">
+      <img src="assets/logo-csas.png" alt="CSAS Logo" class="w-36" />
+      <img src="assets/sign-up.svg" alt="Register Illustration" class="w-96 max-w-full" />
+    </div>
+
+    <!-- Columna derecha: Formulario de registro -->
+    <div class="flex-1 w-full">
+      <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center md:text-left">
+        Crear cuenta de estudiante
+      </h3>
+
+      <form class="space-y-4">
+        <!-- Nombre -->
+        <label class="form-control w-full">
+          <span class="label-text">Nombre</span>
+          <input type="text" placeholder="Tu nombre" class="input input-bordered w-full" />
+        </label>
+
+        <!-- Apellido -->
+        <label class="form-control w-full">
+          <span class="label-text">Primer Apellido</span>
+          <input type="text" placeholder="Apellido" class="input input-bordered w-full" />
+        </label>
+
+        <!-- Segundo Apellido -->
+        <label class="form-control w-full">
+          <span class="label-text">Segundo Apellido</span>
+          <input type="text" placeholder="Apellido" class="input input-bordered w-full" />
+        </label>
+
+        <!-- Email con ícono -->
+        <label class="form-control w-full">
+          <span class="label-text">Correo electrónico</span>
+          <div class="relative">
+            <input type="email" placeholder="ejemplo@correo.com" class="input input-bordered w-full pl-10" />
+            <span class="absolute inset-y-0 left-3 flex items-center text-gray-400">
+              📧
+            </span>
+          </div>
+        </label>
+
+        <!-- Contraseña con ícono ojo -->
+        <label class="form-control w-full">
+          <span class="label-text">Contraseña</span>
+          <div class="relative">
+            <input type="password" placeholder="********" class="input input-bordered w-full pr-10" id="password" />
+            <button type="button" class="absolute inset-y-0 right-3 flex items-center text-gray-400" onclick="togglePassword()">
+              👁
+            </button>
+          </div>
+        </label>
+
+        <!-- Confirmar Contraseña -->
+        <label class="form-control w-full">
+          <span class="label-text">Confirmar contraseña</span>
+          <input type="password" placeholder="********" class="input input-bordered w-full" />
+        </label>
+
+        <!-- Selects -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+         <!-- Género -->
+            <label class="form-control w-full">
+                <span class="label-text">Género</span>
+                <select class="select select-bordered w-full">
+                <option disabled selected>Selecciona tu género</option>
+                <option value="male">Masculino</option>
+                <option value="female">Femenino</option>
+                <option value="other">Otro</option>
+                </select>
+            </label>
+
+            <!-- Edad -->
+            <label class="form-control w-full">
+                <span class="label-text">Edad</span>
+                <select class="select select-bordered w-full">
+                <option disabled selected>Selecciona tu edad</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                </select>
+            </label>
+
+
+          <!-- Instituto -->
+          <label class="form-control w-full">
+            <span class="label-text">Instituto</span>
+            <select class="select select-bordered w-full">
+              <option disabled selected>Selecciona tu instituto</option>
+              <option value="1">Instituto 1</option>
+              <option value="2">Instituto 2</option>
+            </select>
+          </label>
+
+          <!-- Carrera -->
+          <label class="form-control w-full">
+            <span class="label-text">Carrera</span>
+            <select class="select select-bordered w-full">
+              <option disabled selected>Selecciona tu carrera</option>
+              <option value="1">Ingeniería en Sistemas</option>
+              <option value="2">Administración</option>
+            </select>
+          </label>
+
+          <!-- Grupo -->
+          <label class="form-control w-full">
+            <span class="label-text">Grupo</span>
+            <select class="select select-bordered w-full">
+              <option disabled selected>Selecciona tu grupo</option>
+              <option value="1">Grupo A</option>
+              <option value="2">Grupo B</option>
+            </select>
+          </label>
+
+          <!-- Matrícula -->
+        <label class="form-control w-full">
+          <span class="label-text">Matrícula</span>
+          <input type="text" placeholder="Número de matrícula" class="input input-bordered w-full" />
+        </label>
+        
+        </div>
+
+        <!-- Botón -->
+        <button class="btn w-full bg-[#07464d] text-white hover:bg-[#0a5961]">
+          Registrarse
+        </button>
+      </form>
+
+      <!-- Enlace a login -->
+      <p class="mt-6 text-sm text-gray-600 text-center">
+        ¿Ya tienes cuenta?
+        <a routerLink="/login" class="text-[#8accd5] font-semibold hover:underline">Inicia sesión aquí</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function togglePassword() {
+    const password = document.getElementById("password");
+    password.type = password.type === "password" ? "text" : "password";
+  }
+</script>
